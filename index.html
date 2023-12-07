@@ -24,6 +24,12 @@
             unityContainer.style.height = newHeight + 'px';
         }
 
+        // 處理方向更改事件
+        window.addEventListener('orientationchange', function() {
+            // 延遲處理以確保獲取到新的寬高值
+            setTimeout(resizeUnity, 100);
+        });
+
         window.addEventListener('resize', resizeUnity);
         window.addEventListener('load', resizeUnity);
 
